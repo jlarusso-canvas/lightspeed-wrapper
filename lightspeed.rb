@@ -30,5 +30,7 @@ end
 
 l = Lightspeed.new
 puts 'try:  l.fetch("Category.json")'
+puts 'try:  l.fetch("Item.json")'
+puts 'try:  l.fetch("Item/2.json")'
 
 binding.pry
