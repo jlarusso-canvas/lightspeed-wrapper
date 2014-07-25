@@ -38,9 +38,9 @@ end
 
 l = Lightspeed.new
 puts 'see your permissions:  JSON.parse l.req_controls.body'
-puts 'try:  l.fetch("Category.json")'
-puts 'try:  l.fetch("Item.json")'
-puts 'try:  l.fetch("Item/2.json")'
+puts 'try:  l.fetch "Category.json"'
+puts 'try:  l.fetch "Item.json"'
+puts 'try:  l.fetch "Item/2.json"'
 puts 'try:  l.fetch "Image.json"'
 puts 'try:  l.fetch "Item.json?tax=true"'
 puts 'try:  l.fetch "InventoryCountItem.json?itemID=6"'
