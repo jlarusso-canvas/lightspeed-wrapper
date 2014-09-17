@@ -51,4 +51,5 @@ puts 'try:  l.get "Item.json?tax=true"'
 puts 'try:  l.get "InventoryCountItem.json?itemID=6"'
 puts 'try:  l.get "Item/6.json?load_relations=all"'
 puts 'try:  l.delete "Item/6.json"'
+puts 'try:  l.get "Item.json?limit=999"'
 binding.pry
