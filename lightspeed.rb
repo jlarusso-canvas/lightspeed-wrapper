@@ -45,7 +45,7 @@ class Lightspeed
   end
 
   def net_post(url, params)
-    puts params
+    puts "Params: #{params}"
     req = Net::HTTP::Post.new(url, initheader = {'Content-Type' => 'application/json'})
     req.body = params.to_json
     req
@@ -54,16 +54,20 @@ end
 
 sale = {}
 sale["completed"] = true
+sale["taxCategoryID"] = "0"
+sale["employeeID"] = "6"
+sale["registerID"] = "17"
 sale["Shop"] = {}
 sale["Shop"]["shopID"] = "11"
-sale["SaleLines"] = {}
 sale["SaleLines"] = []
 
 sale_line = {}
 sale_line["itemID"] = "929"
 sale_line["unitQuantity"] = "1"
+sale_line["shopID"] = "11"
 
 sale["SaleLines"] << { "SaleLine" => sale_line }
+
 
 l = Lightspeed.new
 puts 'see your permissions:  JSON.parse l.req_controls.body'
@@ -77,4 +81,8 @@ puts 'try:  l.get "Item/6.json?load_relations=all"'
 puts 'try:  l.delete "Item/6.json"'
 puts 'try:  l.get "Item.json?limit=999"'
 puts 'try:  l.post "Sale.json", sale'
+
+
+puts l.post "Sale.json", sale
+
 binding.pry
